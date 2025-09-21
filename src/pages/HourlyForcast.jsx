@@ -17,7 +17,7 @@ const HourlyForecast = () => {
   return (
     <div className="mx-auto my-4 rounded-xl backdrop-blur-3xl bg-sky-200 shadow-md font-sans">
       {/* Header */}
-      <div className="p-4 flex justify-between px-9 bg-opacity-50 rounded-t-2xl border-b border-blue-200">
+      <div className="p-4 flex flex-wrap justify-between px-9 bg-opacity-50 rounded-t-2xl border-b border-blue-200">
         <h1 className="text-xl font-bold text-gray-800">{city}</h1>
         <h1 className="text-xl font-bold text-gray-800">Next 24-Hour Weather Outlook</h1>
       </div>
