@@ -7,6 +7,8 @@ export const DailyWeatherProvider = ({ children }) => {
   const [dailyData, setDailyData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [cityInfo, setCityInfo] = useState("");
+  
 
   useEffect(() => {
     const fetchDailyData = async (lat, lon) => {
@@ -14,6 +16,8 @@ export const DailyWeatherProvider = ({ children }) => {
         const res = await axios.get(
           `https://api.weatherbit.io/v2.0/forecast/daily?lat=${lat}&lon=${lon}&days=15&key=a70ba2d124154067afe94f64a218824b`
         );
+        // console.log(res.data)
+        setCityInfo(res.data);
         setDailyData(res.data.data); // 15-day forecast array
         setLoading(false);
       } catch (err) {
@@ -41,7 +45,7 @@ export const DailyWeatherProvider = ({ children }) => {
   }, []);
 
   return (
-    <DailyWeatherContext.Provider value={{ dailyData, loading, error }}>
+    <DailyWeatherContext.Provider value={{ dailyData, cityInfo, loading, error }}>
       {children}
     </DailyWeatherContext.Provider>
   );
