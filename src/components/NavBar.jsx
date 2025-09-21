@@ -13,7 +13,7 @@ const NavBar = () => {
     }`;
 
   return (
-    <nav className="flex items-center justify-between px-6 py-3 z-50
+    <nav className="flex items-center justify-between px-6 py-5 z-50
                     bg-white/10 backdrop-blur-3xl shadow-lg relative
                     border border-white/20 rounded-b-2xl">
       {/* Brand / Logo */}
@@ -44,7 +44,7 @@ const NavBar = () => {
       <ul
         className={`${
           open ? "block" : "hidden"
-        } absolute right-6 top-16 bg-white backdrop-blur-md shadow-lg rounded-2xl border border-white/20 
+        } absolute right-6 top-16 bg-white backdrop-blur-md shadow-lg rounded-2xl border border-white/20 z-50
         px-6 py-4 md:static md:flex md:items-center md:gap-6 md:bg-transparent md:backdrop-blur-none md:shadow-none md:border-none md:rounded-none md:p-0`}
       >
         <li>

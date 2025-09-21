@@ -5,6 +5,7 @@ import { WiBarometer, WiHumidity, WiRain, WiStrongWind } from "react-icons/wi";
 import HourlySlider from "../components/HourlySlider";
 import DisplayRecentAlertsSlider from "../components/DisplayRecentAlertsSlider";
 import WeatherMap from "../components/WeatherMap";
+import SearchBar from "../components/SearchBar";
 
 
 
@@ -31,7 +32,11 @@ const CurrWeather = () => {
 
   return (
     <>
-    <div className="flex flex-col justify-center items-center  rounded-2xl my-2  min-h-screen back bg-sky-200 p-4">
+    <div className="sticky top-0 z-10 bg-white/10 mx-2 shadow-md rounded-full">
+      <SearchBar/>
+    </div>
+      
+    <div className="flex flex-col justify-center items-center  rounded-2xl my-2 min-h-screen back bg-sky-200 p-4">
       <div className="mx-auto rounded-xl shadow-md overflow-hidden w-full max-w-7xl sm:mt-16  my-4 font-sans backdrop-blur-2xl bg-black/10 bg-cover">
         {/* Header with city name */}
         <div className="px-9 pt-4 flex justify-between items-center">

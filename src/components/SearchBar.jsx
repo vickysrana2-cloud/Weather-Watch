@@ -1,35 +1,22 @@
 // src/components/SearchBar.jsx
 import React, { useState } from "react";
-import axios from "axios";
+import { useHourlyWeather } from "../context/HourlyWeatherContext";
 
-const API_KEY = "YOUR_OPENWEATHER_API_KEY"; // 🔑 Replace with your OpenWeather API key
 
-const SearchBar = ({ onSearch }) => {
-  const [query, setQuery] = useState("");
-  const [weather, setWeather] = useState(null);
-  const [error, setError] = useState("");
 
-  const handleSubmit = async (e) => {
+const SearchBar = () => {
+
+  const[change,setChange]=useState("")
+   const { setSearchCity } = useHourlyWeather();
+
+  const handleSubmit=(e)=>{
     e.preventDefault();
-    if (!query.trim()) return;
+    setSearchCity(change)
+  }
 
-    try {
-      setError("");
-      setWeather(null);
-
-      const res = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${API_KEY}&units=metric`
-      );
-
-      setWeather(res.data);
-      if (onSearch) onSearch(query); // optional callback to parent
-    } catch (err) {
-      setError("City not found. Try again!");
-    }
-  };
 
   return (
-    <div className="relative w-full max-w-md">
+    <div className=" w-full pt-2 ">
       {/* Search Form */}
       <form
         onSubmit={handleSubmit}
@@ -38,8 +25,8 @@ const SearchBar = ({ onSearch }) => {
         <input
           type="text"
           placeholder="Search Location"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          value={change}
+          onChange={(e) => setChange(e.target.value)}
           className="flex-grow bg-transparent text-gray-900 placeholder-gray-700 focus:outline-none px-2"
         />
         <button
@@ -49,26 +36,6 @@ const SearchBar = ({ onSearch }) => {
           Search
         </button>
       </form>
-
-      {/* Weather Result */}
-      {weather && (
-        <div className="absolute top-14 w-full bg-white/30 backdrop-blur-xl border border-white/40 rounded-xl shadow-lg p-4 text-center">
-          <h3 className="text-lg font-semibold text-gray-900">
-            {weather.name}, {weather.sys.country}
-          </h3>
-          <p className="text-gray-700 capitalize">{weather.weather[0].description}</p>
-          <p className="text-2xl font-bold text-sky-700">
-            {Math.round(weather.main.temp)}°C
-          </p>
-        </div>
-      )}
-
-      {/* Error Message */}
-      {error && (
-        <div className="absolute top-14 w-full bg-red-200/70 text-red-900 rounded-xl p-3 text-center text-sm">
-          {error}
-        </div>
-      )}
     </div>
   );
 };
