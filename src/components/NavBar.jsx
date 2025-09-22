@@ -69,7 +69,7 @@ const NavBar = () => {
         </li>
         <li>
           <NavLink to="/emergencysup" className={linkClasses}>
-            Suport
+            Support
           </NavLink>
         </li>
       </ul>
