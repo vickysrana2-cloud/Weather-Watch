@@ -15,7 +15,7 @@ const routes = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <CurrWeather /> }, // Home page
+      { index: true, element: <CurrWeather /> }, // -------- Home page
       { path: "daily", element: <DailyForcast /> },
       { path: "hourly", element: <HourlyForcast /> },
       { path: "hourly-slider", element: <HourlySlider /> },

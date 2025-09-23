@@ -12,7 +12,6 @@ export const HourlyWeatherProvider = ({ children }) => {
   const [city, setCity] = useState("");
   const [timeZone, setTimeZone] = useState("");
   const [searchCity, setSearchCity] = useState("");
-  const [info,setInfo]=useState("");
 
   useEffect(() => {
     const fetchHourlyData = async (cityName) => {
@@ -22,7 +21,6 @@ export const HourlyWeatherProvider = ({ children }) => {
         );
         setCity(res.data.city_name);
         setTimeZone(res.data.timezone);
-        setInfo(res.data);
         setHourlyData(res.data.data);
       } catch (err) {
         console.error("Failed to fetch hourly weather data:", err);
@@ -40,7 +38,7 @@ export const HourlyWeatherProvider = ({ children }) => {
 
   
   useEffect(() => {
-    if (searchCity) return; // ------------Skip geolocation if user already searched
+    if (searchCity) return; // ------------ Skip geolocation if user already searched
 
     const fetchHourlyData = async (lat, lon) => {
       try {
@@ -49,7 +47,6 @@ export const HourlyWeatherProvider = ({ children }) => {
         );
         setCity(res.data.city_name);
         setTimeZone(res.data.timezone);
-        setInfo(res.data);
         setHourlyData(res.data.data);
       } catch (err) {
         console.error("Failed to fetch hourly weather data:", err);
@@ -82,7 +79,6 @@ export const HourlyWeatherProvider = ({ children }) => {
     <HourlyWeatherContext.Provider
       value={{
         setSearchCity,
-        info,
         hourlyData,
         city,
         loading,

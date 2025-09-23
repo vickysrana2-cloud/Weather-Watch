@@ -41,6 +41,7 @@ const DailyForcast = () => {
               ({cityInfo.country_code})
             </span>
           </div>
+          <p className="text-xl font-bold text-black/60">Upcoming 15-Day Weather Trends</p>
           <div className="flex items-center gap-2 text-gray-700">
             <FaRegClock />
             <span className="text-sm">{new Date().toLocaleString()}</span>

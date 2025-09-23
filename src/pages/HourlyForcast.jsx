@@ -16,20 +16,20 @@ const HourlyForecast = () => {
 
   return (
     <div className="mx-auto my-4 rounded-xl backdrop-blur-3xl bg-sky-200 shadow-md font-sans">
-      {/* Header */}
+      {/* -------------------------------------------------------------- Header */}
       <div className="p-4 flex flex-wrap justify-between px-9 bg-opacity-50 rounded-t-2xl border-b border-blue-200">
-        <h1 className="text-xl font-bold text-gray-800">{city}</h1>
-        <h1 className="text-xl font-bold text-gray-800">Next 24-Hour Weather Outlook</h1>
+        <h1 className="text-xl font-bold text-orange-600 flex items-center"><MdLocationOn/> {city}</h1>
+        <h1 className="text-xl font-bold text-black/60">Next 24-Hour Weather Outlook</h1>
       </div>
 
-      {/* Hourly Cards */}
+      {/* -------------------------------------------------------------- Hourly Cards */}
       <div  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-5 ">
         {hourlyData.map((hour, index) => (
           <div
             key={index}
             className="p-6 backdrop-blur-2xl bg-white/30 rounded-3xl shadow-xl border border-white/40 hover:shadow-2xl transition-all duration-300"
           >
-            {/* Location + Time */}
+            {/* -------------------------------------------------------------- Location + Time */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
               <div className="flex items-center gap-2 text-gray-700">
                 <FaRegClock className="text-lg" />
@@ -43,9 +43,9 @@ const HourlyForecast = () => {
               </div>
             </div>
 
-            {/* Main Weather Section */}
+            {/* -------------------------------------------------------------- Main Weather Section */}
             <div className="flex flex-col sm:flex-row sm:justify-between items-center sm:items-start gap-8">
-              {/* Left Side */}
+              {/* -------------------------------------------------------------- Left Side */}
               <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
                 <img
                   src={`https://www.weatherbit.io/static/img/icons/${hour.weather.icon}.png`}
@@ -63,7 +63,7 @@ const HourlyForecast = () => {
                 </p>
               </div>
 
-              {/* Right Side */}
+              {/* -------------------------------------------------------------- Right Side */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700 w-full ">
                 <div className="flex items-center gap-2 p-3   bg-white/40 rounded-xl shadow sm:bg-transparent sm:rounded-none sm:shadow-none">
                   <BsWind className="text-xl text-blue-700" />

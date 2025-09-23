@@ -1,4 +1,4 @@
-// src/pages/ErrorPage.jsx
+
 import React from "react";
 import { useRouteError, Link } from "react-router-dom";
 
@@ -14,19 +14,19 @@ const ErrorPage = () => {
           Sorry, an unexpected error has occurred.
         </p>
 
-        {/* Display error details if available */}
+        {/* ------------------------ Display error details if available */}
         {error && (
           <p className="italic text-sm text-gray-600 mb-6">
             {error.statusText || error.message || "Something went wrong"}
           </p>
         )}
 
-        {/* Back to Home button */}
+        {/* ----------------------- Back to Home button */}
         <Link
           to="/"
           className="px-6 py-3 bg-red-600 text-white font-medium rounded-lg shadow hover:bg-red-700 transition-all"
         >
-          ⬅ Go Back Home
+          {"<= "} Go Back Home
         </Link>
       </div>
     </div>

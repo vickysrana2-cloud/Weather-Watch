@@ -1,4 +1,4 @@
-// src/components/LiveSupportForm.jsx
+
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import { HourlyWeatherContext } from "../context/HourlyWeatherContext";
@@ -15,7 +15,7 @@ function LiveSupportForm() {
     e.preventDefault();
     setIsLoading(true);
 
-    // Basic validation
+    // ---------------------------- Basic validation
     if (!name.trim()) {
       setStatus("Please enter your name");
       setIsLoading(false);
@@ -27,12 +27,12 @@ function LiveSupportForm() {
       return;
     }
 
-    // Prepare data
+    // -------------------------------------- Prepare data
     const alertData = {
       name,
       message,
       timestamp: new Date().toISOString(),
-      location: city, // You could enhance this with geolocation
+      location: city, 
     };
 
     try {
@@ -40,6 +40,7 @@ function LiveSupportForm() {
         "https://68ce52d36dc3f350777eaa4a.mockapi.io/users",
         alertData
       );
+      console.log(res);
 
       if (res.status === 201 || res.status === 200) {
         setStatus("✅ Alert submitted successfully!");
@@ -47,7 +48,7 @@ function LiveSupportForm() {
         setMessage("");
         setName("");
 
-        // Clear status after 5s
+        // --------------------------- Clear status after 5s
         setTimeout(() => setStatus(""), 5000);
       } else {
         setStatus("❌ Failed to submit alert. Please try again.");
@@ -68,7 +69,7 @@ function LiveSupportForm() {
             Weather Alert Form
           </h3>
 
-          {/* Info Section */}
+          {/* --------------------------- Info Section */}
           <div className="bg-white/40 p-4 rounded-lg">
             <p className="font-medium text-gray-700 mb-2">About Live Alerts:</p>
             <ul className="text-sm text-gray-600 space-y-1">
@@ -80,7 +81,7 @@ function LiveSupportForm() {
             </ul>
           </div>
 
-          {/* Name Input */}
+          {/* --------------------------- Name Input */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Your Name *
@@ -95,7 +96,7 @@ function LiveSupportForm() {
             />
           </div>
 
-          {/* Alert Message Textarea */}
+          {/* -------------------------- Alert Message Textarea */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Alert Message *
@@ -109,7 +110,7 @@ function LiveSupportForm() {
             />
           </div>
 
-          {/* Status */}
+          {/* ------------------- Status */}
           {status && (
             <div
               className={`p-3 rounded-lg text-center font-medium ${
@@ -122,7 +123,7 @@ function LiveSupportForm() {
             </div>
           )}
 
-          {/* Submit Button */}
+          {/* --------------------- Submit Button */}
           <button
             type="submit"
             disabled={isLoading}
@@ -131,7 +132,7 @@ function LiveSupportForm() {
             {isLoading ? "Submitting..." : "Broadcast Alert"}
           </button>
 
-          {/* Submitted Alert Preview */}
+          {/* --------------------------------- Submitted Alert Preview */}
           {submittedData && (
             <div className="bg-white/40 p-4 rounded-lg mt-4">
               <h4 className="font-semibold text-gray-800 mb-2">
