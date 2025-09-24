@@ -62,7 +62,7 @@ function LiveSupportForm() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-blue-400 to-purple-300">
+    <div className="min-h-screen flex items-center justify-center rounded-t-2xl my-2 p-4 bg-gradient-to-br from-blue-400 to-purple-300">
       <div className="max-w-md w-full bg-white/30 backdrop-blur-md rounded-xl shadow-xl p-6 border border-white/50">
         <form onSubmit={handleSubmit} className="space-y-5">
           <h3 className="text-2xl font-bold text-center text-gray-800">

@@ -26,7 +26,7 @@ const EmergencySup = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-red-200 to-yellow-100 p-6">
+    <div className="min-h-screen my-2 rounded-t-2xl flex flex-col items-center justify-center bg-gradient-to-br from-red-200 to-yellow-100 p-6">
       <div className="max-w-2xl w-full bg-white/70 backdrop-blur-md rounded-xl shadow-xl p-6 border border-white/50">
         <h1 className="text-3xl font-bold text-red-700 text-center mb-4">
           🚨 Emergency Support
