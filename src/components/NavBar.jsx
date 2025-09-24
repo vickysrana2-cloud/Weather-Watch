@@ -6,20 +6,21 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
 
   const linkClasses = ({ isActive }) =>
-    `block py-2 px-3 rounded-lg transition ${
+    `block py-1 px-3 rounded-lg transition ${
       isActive
-        ? "bg-blue-600 text-white"
+        ? "bg-sky-500 text-white"
         : "text-gray-700 hover:bg-blue-100 hover:text-blue-800"
     }`;
 
   return (
-    <nav className="flex items-center justify-between px-6 py-5 z-50
-                    bg-white/10 backdrop-blur-3xl shadow-lg relative
+    <nav className="flex items-center justify-between px-6 py-6 z-50
+                    bg-gradient-to-b from-blue-200 via-blue-100 to-blue-300
+                    shadow-lg relative opacity-90
                     border border-white/20 rounded-b-2xl">
-      {/* Brand / Logo */}
+      {/* ----------------------------------------------------------------------- Brand / Logo */}
       <div className="text-xl font-bold text-blue-700">WeatherWatch</div>
 
-      {/* Mobile Menu Button */}
+      {/* ----------------------------------------- Mobile Menu Button */}
       <button
         className="md:hidden flex items-center"
         onClick={() => setOpen(!open)}

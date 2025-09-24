@@ -15,7 +15,7 @@ const HourlyForecast = () => {
   if (!hourlyData || hourlyData.length === 0) return <p>No data available.</p>;
 
   return (
-    <div className="mx-auto my-4 rounded-xl backdrop-blur-3xl bg-sky-200 shadow-md font-sans">
+    <div className="mx-auto my-2 rounded-xl backdrop-blur-3xl bg-sky-200 shadow-md font-sans">
       {/* -------------------------------------------------------------- Header */}
       <div className="p-4 flex flex-wrap justify-between px-9 bg-opacity-50 rounded-t-2xl border-b border-blue-200">
         <h1 className="text-xl font-bold text-orange-600 flex items-center"><MdLocationOn/> {city}</h1>

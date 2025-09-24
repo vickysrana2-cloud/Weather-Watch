@@ -1,4 +1,4 @@
-// src/components/SearchBar.jsx
+
 import React, { useState } from "react";
 import { useHourlyWeather } from "../context/HourlyWeatherContext";
 
@@ -17,10 +17,10 @@ const SearchBar = () => {
 
   return (
     <div className=" w-full pt-2 ">
-      {/* Search Form */}
+      {/* ----------------------------------------- Search Form */}
       <form
         onSubmit={handleSubmit}
-        className="flex items-center bg-white/10 backdrop-blur-xl border border-white/50 rounded-full shadow-md px-3 py-2"
+        className="flex items-center bg-gradient-to-t from-sky-100 via-sky-50 to-sky-100 opacity-80  rounded-full shadow-md px-3 py-2"
       >
         <input
           type="text"
