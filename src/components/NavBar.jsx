@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink,Link } from "react-router-dom";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
@@ -18,7 +18,9 @@ const NavBar = () => {
                     shadow-lg relative opacity-90
                     border border-white/20 rounded-b-2xl">
       {/* ----------------------------------------------------------------------- Brand / Logo */}
+      <Link to={"/"}>
       <div className="text-xl font-bold text-blue-700">WeatherWatch</div>
+      </Link>
 
       {/* ----------------------------------------- Mobile Menu Button */}
       <button
